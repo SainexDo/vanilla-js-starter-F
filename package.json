@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server && parcel serve src/index.html --open",
+    "start": "node server",
+    "parcel": "parcel serve src/index.html --open",
     "test": "jest"
   },
   "keywords": [],
