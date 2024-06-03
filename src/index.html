@@ -13,8 +13,8 @@
 		<div class="titulo">Tareas por hacer</div>
 		<div class="containerTop">
 			<div class="containerLeft">
-				<input type="text" id="aggTask" placeholder="Agrega una tarea">
-				<div class="btnAggTask"><b>Agregar</b></div>
+				<input type="text" id="inputAggTask" placeholder="Agrega una tarea">
+				<button id="btnAggTask"><b>Agregar</b></button>
 			</div>
 			<div class="containerRight">
 				<div class="showText">Tareas Completadas</div>
@@ -22,11 +22,17 @@
 			</div>
 		</div>
 		<div class="containerBottom">
-			<div class="noTasks"></div>
+			<div id="tasksContainer">
+
+			</div>
 		</div>
 	</div>
-	
+
 	<script src="./index.js" type="module"></script>
+	<script src="script.js"></script>
+
 </body>
 
 </html>
+
+<!-- <div class="noTasks">Aún no hay tareas</div> -->
