@@ -3,14 +3,36 @@
 
 <head>
 	<title>Ejemplo básico</title>
-	<meta charset="UTF-8" />
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-	<h1>La aplicación esta corriendo!</h1>
-	<h1>en  equipo</h1>
+
+	<div class="container">
+		<div class="titulo">Tareas por hacer</div>
+		<div class="containerTop">
+			<div class="containerLeft">
+				<input type="text" id="inputAggTask" placeholder="Agrega una tarea">
+				<button id="btnAggTask"><b>Agregar</b></button>
+			</div>
+			<div class="containerRight">
+				<div class="showText">Tareas Completadas</div>
+				<div class="spaceNum">0</div>
+			</div>
+		</div>
+		<div class="containerBottom">
+			<div id="tasksContainer">
+
+			</div>
+		</div>
+	</div>
 
 	<script src="./index.js" type="module"></script>
+	<script src="script.js"></script>
+
 </body>
 
 </html>
+
+<!-- <div class="noTasks">Aún no hay tareas</div> -->

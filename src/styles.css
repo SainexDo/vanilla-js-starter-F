@@ -1,0 +1,89 @@
+body {
+    background-color: rgb(225, 225, 229);
+}
+
+* {
+    font-family: 'Times New Roman', Times, serif;
+    user-select: none;
+    
+}
+
+.titulo {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 3%;
+    color: rgba(0, 0, 0, 0.808);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 66%;
+    height: 640px;
+    border-radius: 20px;
+    margin-left: 12%;
+    margin-top: 3%;
+    padding: 0 4% 0 4%;
+}
+
+.containerTop {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+.containerRight {
+    display: flex;
+    font-size: 20px;
+    color: grey;
+}
+
+.showText {
+    display: grid;
+    place-items: center;
+    width: 120px;
+}
+
+.spaceNum {
+    border: solid 1px grey;
+    width: 68px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+#btnAggTask {
+    margin-top: 3%;
+    display: grid;
+    place-items: center;
+    width: 120%;
+    height: 70%;
+    background-color: rgb(49, 109, 222);
+    border-radius: 3px;
+    color: white;
+    border: none;
+}
+
+#inputAggTask {
+    padding: 7% 10% 7% 10%;
+}
+
+.containerBottom {
+    margin-top: 7.5%;
+    width: 100%;
+    border: gray solid 2px;
+    height: 60%;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#tasksContainer > div {
+    width: 90%;
+    height: 40px;
+    margin-left: 5%;
+    border: 2px solid grey;
+    border-radius: 6px;
+}
