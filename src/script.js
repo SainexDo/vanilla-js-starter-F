@@ -101,12 +101,6 @@ async function getTasks() {  //Función que permite obtener los datos del server
         editar.className = 'editar';
         editar.innerHTML = '📖'
         editar.addEventListener('click', function () {
-
-            let newText = prompt("Edita tu tarea:", task.task);   //Aquí uso un prompt, para escribir el nuevo texto al momemnto de editar.
-
-            if (newText && newText.trim() !== '') {        //valido que el input no esté vacío
-                updateTask(task.id, { task: newText, completed: task.completed });   //Llamo al metodo PUT, accedo y edito la task
-            }
         });
 
         containerDivs.appendChild(editar);
@@ -114,9 +108,6 @@ async function getTasks() {  //Función que permite obtener los datos del server
         let eliminar = document.createElement("div");
         eliminar.className = 'eliminar';
         eliminar.innerHTML = '🗑️'
-        eliminar.addEventListener('click', function() {
-            deleteTask(task.id);
-        });
 
         containerDivs.appendChild(eliminar);
 
@@ -127,10 +118,9 @@ async function getTasks() {  //Función que permite obtener los datos del server
             spaceNum.innerHTML = completedCount;  //Vuelvo el estado del contador igual al completedCount
         });
     }
-
     spaceNum.innerHTML = completedCount;
-
 }
+
 async function deleteTask(id) {  //Funcion que obtiene datos de la api
     const response = await fetch('http://localhost:3000/api/todo/' + id, {
         method: 'DELETE',
@@ -143,52 +133,13 @@ async function deleteTask(id) {  //Funcion que obtiene datos de la api
 }
 
 
-getTasks();
+// async function getTasks() {  //Función que permite obtener los datos del server.
+//     const response = await fetch("http://localhost:3000/api/todo");
+//     const tasks = await response.json();
 
-async function getTasks() {  //Función que permite obtener los datos del server.
-    const response = await fetch("http://localhost:3000/api/todo");
-    const tasks = await response.json();
+    
+//     }
+// }
 
-    if (tasks.length === 0) {  //Valido si no hay tareas, si no hay 
-        noTareas.style.display = 'block';        //muestro el texto de que aún no hay tareas.
-    } else {
-        noTareas.style.display = 'none';  //Si por el contrario, si hay tareas, el texto no se mostrará.
-    }
 
-    for (const task of tasks) { //Itero dentro de la variable tasks, esto para ver el contenido del server
-
-        let containerDivs = document.createElement('div');
-        containerDivs.className = "containerDivs";   //Creo, doy className y padre a este div, luego lo vuelvo igual a un contenido del server.
-        containerDivs.dataset.taskId = task.id;
-        tasksContainer.appendChild(containerDivs);
-
-        let checkbox = document.createElement("input");   //Creo, doy className y padre a este checkbox, para lugo hacer validaciones con él
-        checkbox.type = "checkbox";
-        checkbox.className = "checkbox"
-        checkbox.checked = task.completed;
-        containerDivs.appendChild(checkbox);
-
-        if (task.completed) {
-            completedCount++;  //Accedo a task.completed buscando el true y false que se suben al api cada vez que toco un checkbox.
-        }
-
-        let taskDiv = document.createElement("div");
-        taskDiv.className = "tarea";
-        taskDiv.innerHTML = task.task;
-        containerDivs.appendChild(taskDiv);
-
-        let editar = document.createElement('div');
-        editar.className = 'editar';
-        editar.innerHTML = '📖'
-        editar.addEventListener('click', function () {
-        });
-
-        containerDivs.appendChild(editar);
-
-        let eliminar = document.createElement("div");
-        eliminar.className = 'eliminar';
-        eliminar.innerHTML = '🗑️'
-
-        containerDivs.appendChild(eliminar);
-    }
-} onafterprint
+getTasks()
