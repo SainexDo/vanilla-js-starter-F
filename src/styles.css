@@ -1,84 +1,88 @@
 body {
     background-color: rgb(225, 225, 229);
+    height: 750px;
 }
-
 * {
     font-family: 'Times New Roman', Times, serif;
     user-select: none;
 }
-
 .titulo {
     text-align: center;
-    font-size: 40px;
+    font-size: clamp(35px, 9vw, 60px);
     margin-top: 3%;
-    color: rgba(0, 0, 0, 0.808);
+    color: rgba(0, 0, 0, 0.596);
 }
-
 .container {
     display: flex;
     flex-direction: column;
     background-color: white;
     width: 66%;
-    height: 640px;
+    height: 92%;
     border-radius: 20px;
     margin-left: 12%;
     margin-top: 3%;
     padding: 0 4% 0 4%;
 }
-
 .containerTop {
     display: flex;
     justify-content: space-between;
-    margin-top: 2%;
+    margin-top: 5%;
+    flex-wrap: wrap;
 }
-
 .containerRight {
     display: flex;
     font-size: 20px;
     color: grey;
+    flex-wrap: wrap;
 }
-
 .showText {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     place-items: center;
-    width: 120px;
+    text-align: center;
+    width: 130px;
+    margin-top: 4.5%;
+    font-size: clamp(17px, 4vw, 20px);
 }
-
 #spaceNum {
     border: solid 1px grey;
     width: 65px;
+    height: 65px;
     border-radius: 50%;
     display: grid;
     place-items: center;
 }
-
 #btnAggTask {
     margin-top: 3%;
     display: grid;
     place-items: center;
-    width: 120%;
-    height: 70%;
+    width: clamp(85%, 7vw, 90%);
+    height: 50px;
     background-color: rgb(49, 109, 222);
     border-radius: 3px;
     color: white;
     border: none;
 }
-
 #inputAggTask {
-    padding: 7% 10% 7% 10%;
+    width: 95%;
+    height: 50px;
 }
-
-.containerBottom {
-    margin-top: 7.5%;
+#containerBottom {
+    margin-top: 8%;
     width: 100%;
     border: gray solid 2px;
     border-radius: 6px;
-    height: 60%;
+    height: 51%;
     overflow: auto;
 }
-
-#containerDivs {
-    width: 96%;
+.text {
+    color: rgba(0, 0, 0, 0.66);
+    font-size: 35px;
+    display: grid;
+    place-items: center;
+}
+.containerDivs {
+    max-width: 96%;
     height: 40px;
     margin-left: 2%;
     border: 2px solid grey;
@@ -86,28 +90,57 @@ body {
     margin-top: 1.5%;
     margin-bottom: 1.5%;
     display: grid;
-    grid-template-columns: 6% 89% 5%;
+    grid-template-columns: 5% 81% 7% 7%;
+    font-size: clamp(12px, 2vw, 16px); /* Responsive font size */
 }
-
-#task {
-    margin-top: 11px;
-    font-size: 15px;
-    color: rgba(0, 0, 0, 0.671);
-
-    min-width: 0px; 
-    height: 20px;
-}
-
-#eliminar {
-    margin-top: 2px;
-    font-size: 24px;
-    text-shadow: 1px 1px 2px black;
-}
-
-#checkbox {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    box-shadow: 1.5px 1.5px 5px black;
+.checkbox {
     margin-top: 9px;
+}
+.tarea {
+    margin-top: 11px;
+    color: rgba(0, 0, 0, 0.671);
+    font-size: clamp(12px, 2vw, 16px); /* Responsive font size */
+}
+.editar {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3.5px;
+    text-shadow: 1px 1px 2px black;
+    font-size: clamp(1px, 2.3vw, 40px);
+}
+.eliminar {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    text-shadow: 1px 1px 2px black;
+    font-size: clamp(15px, 2.3vw, 40px);
+}
+#noTareas {
+    text-align: center;
+    margin-top: 15%;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: clamp(20px, 4vw, 34px);
+}
+/* Media Queries for further responsiveness */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: clamp(30px, 8vw, 55px);
+    }
+    .containerDivs {
+        grid-template-columns: 10% 70% 10% 10%;
+    }
+    .editar, .eliminar {
+        font-size: clamp(20px, 2vw, 35px);
+    }
+}
+@media (max-width: 480px) {
+    .titulo {
+        font-size: clamp(25px, 7vw, 50px);
+    }
+    .containerDivs {
+        grid-template-columns: 15% 65% 10% 10%;
+    }
+    .editar, .eliminar {
+        font-size: clamp(20px, 1.4vw, 30px);
+    }
 }
